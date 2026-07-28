@@ -1,0 +1,6 @@
+.venv/
+.idea/
+
+test.py
+test.ipynb
+
