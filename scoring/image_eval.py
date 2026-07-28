@@ -1,0 +1,1 @@
+""" This file is to evaluate the images and return a score for the same """
