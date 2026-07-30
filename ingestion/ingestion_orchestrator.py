@@ -35,6 +35,7 @@ from config import (
 )
 from core.log import get_logger
 from ingestion.drive_image_scraper import download_drive_image
+from ingestion.gemini_scraper import scrape_gemini_share
 from ingestion.gpt_scraper import scrape_chatgpt_share
 
 logger = get_logger(__name__)
@@ -54,7 +55,12 @@ def _scrape_chat(
         return None, None  # blank in the form, not a scrape failure
 
     try:
-        turns = scrape_chatgpt_share(url)
+        if "gemini" in url.lower():
+            turns = scrape_gemini_share(url)
+        elif "gpt" in url.lower():
+            turns = scrape_chatgpt_share(url)
+        else:
+            turns = scrape_chatgpt_share(url)
         if not turns:
             raise ValueError("Scraper returned zero turns")
         return [asdict(turn) for turn in turns], None
