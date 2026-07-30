@@ -2,7 +2,10 @@
 .idea/
 logs/
 *.log
+data/raw/
+data/processed/
 
 test.py
 test.ipynb
+*.pyc
 

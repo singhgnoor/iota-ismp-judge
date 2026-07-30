@@ -62,13 +62,11 @@ class _BrowserSession:
 def _load_page(page: Page, url: str) -> None:
     """Loads the share page and waits until the conversation is rendered."""
 
-    logger.info("Loading ChatGPT share page...")
+    logger.info(f"Loading GPT chat {url}...")
 
     page.goto(url, wait_until="domcontentloaded")
 
     page.wait_for_load_state("networkidle")
-
-    print(page.content())
 
 
     try:
@@ -114,6 +112,8 @@ def _walk_dom(page: Page) -> List[ChatTurn]:
                 text=text,
             )
         )
+
+    logger.debug(f"Found {len(turns)} conversation turns.\n Chat turns: {turns}")
 
     return turns
 
