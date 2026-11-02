@@ -4,6 +4,7 @@ logs/
 *.log
 data/raw/
 data/processed/
+data/reference/
 
 test.py
 test.ipynb

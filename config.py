@@ -52,6 +52,15 @@ CSV_METADATA_COLUMNS = [
     "Member Names",
 ]
 
+REFERENCE_IMAGES = [
+    Path("data/reference/ref_0.jpg"),
+    Path("data/reference/ref_1.jpg"),
+    Path("data/reference/ref_2.jpg"),
+    Path("data/reference/ref_3.jpg"),
+    Path("data/reference/ref_4.jpg"),
+]
+SCORES_CSV = PROCESSED_DIR / "scores.csv"
+
 #  HTTP
 REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
